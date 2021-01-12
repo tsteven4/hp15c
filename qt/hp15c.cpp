@@ -432,7 +432,7 @@ CalcDisplay::CalcDisplay()
 class HP15C: public QApplication {
     Q_OBJECT
 public:
-    HP15C(int argc, char *argv[]);
+    HP15C(int& argc, char *argv[]);
 
     void init();
 private:
@@ -511,7 +511,7 @@ QScriptValue set_decimal(QScriptContext *context, QScriptEngine *engine)
 
 QScriptValue set_digit(QScriptContext *context, QScriptEngine *engine)
 {
-    g_CalcWidget->set_digit(context->argument(0).toInt32(), context->argument(1).toString()[0].toAscii());
+    g_CalcWidget->set_digit(context->argument(0).toInt32(), context->argument(1).toString()[0].toLatin1());
     return QScriptValue(QScriptValue::UndefinedValue);
 }
 
@@ -545,7 +545,7 @@ QScriptValue set_user(QScriptContext *context, QScriptEngine *engine)
     return QScriptValue(QScriptValue::UndefinedValue);
 }
 
-HP15C::HP15C(int argc, char *argv[])
+HP15C::HP15C(int& argc, char *argv[])
  : QApplication(argc, argv)
 {
     setWindowIcon(QIcon(":/15-128.png"));
