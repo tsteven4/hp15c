@@ -20,7 +20,7 @@
 #include <QMenu>             // for QMenu
 #include <QMenuBar>          // for QMenuBar
 #include <QMessageBox>       // for QMessageBox
-#include <QObject>           // for QObject
+#include <QObject>           // for QObject, Q_OBJECT, SIGNAL, SLOT, slots
 #include <QPainter>          // for QPainter
 #include <QPalette>          // for QPalette, QPalette::Window
 #include <QPixmap>           // for QPixmap
@@ -34,7 +34,9 @@
 #include <QString>           // for QString
 #include <QTimer>            // for QTimer
 #include <QWidget>           // for QWidget
-#include <QtCore>            // for operator|, AlignLeft, AlignTop, SIGNAL, SLOT, Q_OBJECT, qint32, AlignHCenter, slots, Q_UNUSED, yellow
+#include <Qt>                // for operator|, AlignLeft, AlignTop, AlignHCenter, yellow
+#include <QtGlobal>          // for Q_UNUSED, qint32
+
 
 QScriptEngine *script;
 
