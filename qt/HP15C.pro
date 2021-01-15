@@ -3,8 +3,6 @@
 ######################################################################
 
 TEMPLATE = app
-DEPENDPATH += .
-INCLUDEPATH += .
 
 QT += script
 QT += widgets
